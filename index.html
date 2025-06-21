@@ -1,1 +1,141 @@
-<p>hello world</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Kairui</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/backimg.jpg'); /* 使用相对路径 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .brand-name {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            margin-bottom: 2rem;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 200;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            animation: fadeInUp 2s ease-out 0.5s both;
+        }
+
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%);
+            z-index: 2;
+        }
+
+        .wine-glass {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(139,69,19,0.05)' stroke-width='0.5'%3E%3Cpath d='M12 2L8 8v8c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2V8l-4-6z'/%3E%3Cpath d='M8 8h8'/%3E%3Cpath d='M10 10h4'/%3E%3Cpath d='M10 12h4'/%3E%3Cpath d='M10 14h4'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 60px 60px;
+            opacity: 0.3;
+            z-index: 2;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 3rem;
+                letter-spacing: 0.2em;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                letter-spacing: 0.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 2.5rem;
+                letter-spacing: 0.15em;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 0.2em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="background-overlay"></div>
+    <div class="background-pattern"></div>
+    <div class="wine-glass"></div>
+    <div class="container">
+        <h1 class="brand-name">Maison Kairui</h1>
+        <div class="subtitle">wine estate</div>
+    </div>
+</body>
+</html>
