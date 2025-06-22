@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">Ingredients & Nutrition</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #444;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: #ffffff;
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+        }
+        .lang-switcher img {
+            width: 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .lang-switcher img:hover {
+            transform: scale(1.1);
+        }
+        .lang-switcher img.active {
+            box-shadow: 0 0 0 2px #c9b48a;
+        }
+        .lot-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        th {
+            font-weight: normal;
+            color: #a0a0a0;
+        }
+        td {
+            font-weight: bold;
+        }
+        .nutrition-table th {
+            padding-left: 1rem;
+        }
+        .nutrition-table .sub-item th {
+            padding-left: 2.5rem;
+        }
+        .ingredients-list, .warning-text, .recycling-footer {
+            margin-bottom: 1rem;
+        }
+        .recycling-table .material {
+            color: #a0a0a0;
+            font-weight: normal;
+        }
+        .recycling-table .instructions {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../../index.html" class="back-link" data-translate="back_to_home"></a>
+    <header>
+        <h1 data-translate="title"></h1>
+        <div class="lang-switcher">
+            <img src="../../images/zh-CN.svg" alt="Chinese" onclick="changeLanguage('zh')" data-lang="zh">
+            <img src="../../images/en.svg" alt="English" onclick="changeLanguage('en')" data-lang="en">
+            <img src="../../images/fr.svg" alt="French" onclick="changeLanguage('fr')" data-lang="fr">
+        </div>
+    </header>
+    <div class="lot-number">Maison Kairui - Bouzeron 2024 Elevage Prolongé </div>
+
+    <h2 data-translate="nutrition_title"></h2>
+    <table class="nutrition-table">
+        <tr>
+            <th data-translate="energy"></th>
+            <td>79 kcal / 328 kJ</td>
+        </tr>
+        <tr class="main-item">
+            <th data-translate="fat"></th>
+            <td>0 g</td>
+        </tr>
+        <tr class="sub-item">
+            <th data-translate="saturated_fat"></th>
+            <td>0 g</td>
+        </tr>
+        <tr class="main-item">
+            <th data-translate="carbs"></th>
+            <td>0.75g</td>
+        </tr>
+        <tr class="sub-item">
+            <th data-translate="sugars"></th>
+            <td>0.05g</td>
+        </tr>
+        <tr>
+            <th data-translate="protein"></th>
+            <td>0 g</td>
+        </tr>
+        <tr>
+            <th data-translate="salt"></th>
+            <td>0 g</td>
+        </tr>
+    </table>
+
+    <h2 data-translate="ingredients_title"></h2>
+    <p class="ingredients-list" data-translate="ingredients_list"></p>
+
+    <p class="warning-text" data-translate="warning"></p>
+
+    <h2 data-translate="recycling_title"></h2>
+    <table class="recycling-table">
+        <thead>
+            <tr>
+                <th data-translate="bottle"></th>
+                <th data-translate="capsule"></th>
+                <th data-translate="cork"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GL71</td>
+                <td>C/ALU90</td>
+                <td>FOR51</td>
+            </tr>
+            <tr>
+                <td class="material" data-translate="glass"></td>
+                <td class="material" data-translate="poly_aluminum"></td>
+                <td class="material" data-translate="liege"></td>
+            </tr>
+            <tr>
+                <td class="instructions" data-translate="sorting_instructions_1"></td>
+                <td class="instructions" data-translate="sorting_instructions_2" colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="recycling-footer" data-translate="recycling_footer"></p>
+
+</div>
+
+<script>
+    // --- START: TRANSLATIONS ---
+    // 您可以在这里输入或修改不同语言的译文
+    const translations = {
+        en: {
+            title: "Ingredients & Nutrition",
+            lot_number: "Maison Kairui - Bonzeron",
+            back_to_home: "← Explore more",
+            nutrition_title: "Nutritional information per 100 ml",
+            energy: "Energy",
+            fat: "Fat",
+            saturated_fat: "of which saturates",
+            carbs: "Carbohydrate",
+            sugars: "of which sugars",
+            protein: "Protein",
+            salt: "Salt",
+            ingredients_title: "Ingredients",
+            ingredients_list: "grapes, preservatives (sulphites E220)",
+            warning: "You must be of legal drinking age in your country of residence to consume this product. Alcohol abuse is dangerous for your health. Consume with moderation.",
+            recycling_title: "Recycling",
+            bottle: "Bottle",
+            capsule: "Capsule",
+            cork: "Cork",
+            glass: "Glass",
+            poly_aluminum: "Polylaminate aluminum",
+            liege: "Cork",
+            sorting_instructions_1: "Selective sorting",
+            sorting_instructions_2: "Selective sorting or Selective collection of organic waste",
+            recycling_footer: "Please check the provisions of your municipality. Separate the components and dispose of them in the appropriate containers."
+        },
+        fr: {
+            title: "Ingrédients & Nutrition",
+            lot_number: "Maison Kairui - Bonzeron",
+            back_to_home: "← Explorer plus",
+            nutrition_title: "Informations nutritionnelles pour 100 ml",
+            energy: "Énergie",
+            fat: "Matières grasses",
+            saturated_fat: "dont acides gras saturés",
+            carbs: "Glucides",
+            sugars: "dont sucres",
+            protein: "Protéines",
+            salt: "Sel",
+            ingredients_title: "Ingrédients",
+            ingredients_list: "raisin, conservateurs (sulfites E220)",
+            warning: "Vous devez avoir l'âge légal pour la consommation d'alcool dans votre pays de résidence pour consommer ce produit. L'abus d'alcool est dangereux pour la santé. A consommer avec modération.",
+            recycling_title: "Recyclage",
+            bottle: "Bouteille",
+            capsule: "Capsule",
+            cork: "Bouchon",
+            glass: "Verre",
+            poly_aluminum: "Aluminim polylaminé",
+            liege: "Liège",
+            sorting_instructions_1: "Tri sélectif",
+            sorting_instructions_2: "Tri sélectif ou Collecte sélective des déchets organiques",
+            recycling_footer: "Veuillez vérifier les dispositions de votre commune. Séparez les composants et déposez-les dans les conteneurs appropriés."
+        },
+        zh: {
+            title: "成分与营养",
+            lot_number: "Maison Kairui - Bonzeron",
+            back_to_home: "← 探索更多",
+            nutrition_title: "每 100 毫升的营养信息",
+            energy: "能量",
+            fat: "脂肪",
+            saturated_fat: "其中：饱和脂肪",
+            carbs: "碳水化合物",
+            sugars: "其中：糖",
+            protein: "蛋白质",
+            salt: "盐",
+            ingredients_title: "配料",
+            ingredients_list: "葡萄，防腐剂（亚硫酸盐 E220）",
+            warning: "您必须达到您居住国家/地区的法定饮酒年龄才能消费本产品。过度饮酒有害健康。请适度饮用。",
+            recycling_title: "回收信息",
+            bottle: "酒瓶",
+            capsule: "酒帽",
+            cork: "瓶塞",
+            glass: "玻璃",
+            poly_aluminum: "复合铝箔",
+            liege: "软木",
+            sorting_instructions_1: "选择性分类",
+            sorting_instructions_2: "选择性分类或有机废物选择性收集",
+            recycling_footer: "请根据您所在社区的规定进行处理。将各部件分开并放入适当的容器中。"
+        }
+    };
+    // --- END: TRANSLATIONS ---
+
+    function changeLanguage(lang) {
+        if (!translations[lang]) return;
+
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+        
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLanguage', lang);
+
+        document.querySelectorAll('.lang-switcher img').forEach(img => {
+            img.classList.remove('active');
+            if (img.getAttribute('data-lang') === lang) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let initialLang = localStorage.getItem('preferredLanguage');
+        
+        if (!initialLang) {
+            // 从浏览器设置中获取语言, e.g., 'en-US' -> 'en'
+            const browserLang = navigator.language.split('-')[0];
+            
+            // 检查我们是否支持该语言，如果不支持则使用默认语言
+            if (translations.hasOwnProperty(browserLang)) {
+                initialLang = browserLang;
+            } else {
+                initialLang = 'en'; // 默认语言改为英语
+            }
+        }
+        
+        changeLanguage(initialLang);
+    });
+</script>
+
+</body>
+</html>
